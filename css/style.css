@@ -2,6 +2,14 @@
     --yellow: #F8F200;
 }
 
+@font-face {
+    font-family: 'archangelsk';
+    src: url('../fonts/archangelsk/archangelsk.woff2') format('woff2'),
+        url('../fonts/archangelsk/archangelsk.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -11,7 +19,7 @@ body {
 }
 
 .title {
-    font-family: 'archangelskregular';
+    font-family: 'archangelsk';
     font-size: 62px;
 }
 
@@ -22,7 +30,7 @@ body {
 
 /*********
 * HEADER *
-**********/
+*********/
 
 .header_wrapper {
     position: absolute;
@@ -60,17 +68,21 @@ body {
     }
 }
 
-.header__icons__icon_link {
+.header__icon_link {
     line-height: initial;
 }
 
-.header__icons__icon {
+.header__icon {
     width: 30px;
     height: 30px;
 }
 
+.header__icon use {
+    fill: black;
+}
+
 @media screen and (max-width: 320px) {
-    .header__icons__icon {
+    .header__icon {
         width: 24px;
         height: 24px;
     }
@@ -78,7 +90,7 @@ body {
 
 /*********
 * SLIDER *
-**********/
+*********/
 
 .slider {
     min-height: 100vh;
@@ -114,7 +126,6 @@ body {
 @media screen and (max-width: 520px) {
     .slider__card {
         right: 0;
-        /* transform: translateX(50%); */
     }
 }
 
