@@ -1,0 +1,125 @@
+:root {
+    --yellow: #F8F200;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 34px;
+    color: black;
+}
+
+.title {
+    font-family: 'archangelskregular';
+    font-size: 62px;
+}
+
+.container {
+    max-width: min(100% - clamp(24px, 7vw, 72px), 1352px);
+    margin-inline: auto;
+}
+
+/*********
+* HEADER *
+**********/
+
+.header_wrapper {
+    position: absolute;
+    width: 100%;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+}
+
+@media screen and (max-width: 658px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.header__icons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 24px;
+}
+
+@media screen and (max-width: 676px) {
+    .header__logo {
+        text-align: center;
+    }
+
+    .header__icons {
+        justify-content: center;
+    }
+}
+
+.header__icons__icon_link {
+    line-height: initial;
+}
+
+.header__icons__icon {
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (max-width: 320px) {
+    .header__icons__icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/*********
+* SLIDER *
+**********/
+
+.slider {
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider__image--active {
+    opacity: 1;
+}
+
+.slider__card {
+    width: 624px;
+    width: clamp(320px, 60.94vw, 624px);
+    aspect-ratio: 16 / 9.4618;
+    clip-path: polygon(9.62% 0, 100% 0, 100% 82.91%, 90.38% 100%, 0 100%, 0 17.09%);
+    background-color: var(--yellow);
+    position: absolute;
+    bottom: 0;
+    right: 46px;
+}
+
+@media screen and (max-width: 520px) {
+    .slider__card {
+        right: 0;
+        /* transform: translateX(50%); */
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .slider__card {
+        width: 100%;
+    }
+}
